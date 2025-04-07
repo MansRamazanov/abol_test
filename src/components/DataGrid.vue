@@ -38,8 +38,8 @@ const data = ref([]);
 const visibleRows = ref([]);
 const scrollContainer = ref(null);
 
-const itemHeight = 55; // Высота одного элемента (включая любые отступы)
-const buffer = 10; // Количество дополнительных строк для буфера
+const itemHeight = 55;
+const buffer = 10;
 
 const startIndex = ref(0);
 const endIndex = ref(0);
@@ -62,7 +62,7 @@ const updateVisibleRows = () => {
 };
 
 onMounted(() => {
-  // Генерация данных
+ 
   for (let i = 0; i < 100000; i++) {
     const squares = [];
     const numSquares = Math.floor(Math.random() * 11) + 10;
@@ -80,7 +80,6 @@ onMounted(() => {
   totalHeight.value = data.value.length * itemHeight;
   updateVisibleRows();
 
-  // Добавление обработчика прокрутки
   scrollContainer.value.addEventListener('scroll', updateVisibleRows);
 });
 
